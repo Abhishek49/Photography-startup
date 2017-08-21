@@ -1,0 +1,52 @@
+<html>
+  <head>
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <title>Place Autocomplete</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+	    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="utf-8">
+	
+    <link rel="stylesheet" href="css/initmapapi.css" />
+  </head>
+  <body>
+
+<div class="container-fluid">
+				<div class="row">
+	<div id="new">
+	<p>Starts at: <input type="text" readonly="readonly" id="datetimepicker1" name="date1">
+
+
+Ends at: <input type="text" readonly="readonly" id="datetimepicker2"  name="date2"></p>
+
+	
+</div></div></div>
+<script type="text/javascript" src="js/jquery.js" ></script>
+<script src="datetimepicker-master/build/jquery.datetimepicker.full.min.js"></script>
+	
+<script> 
+function addDays(theDate, days) {
+    return new Date(theDate.getTime() + days*24*60*60*1000);
+}
+
+var nd = addDays(new Date(), 2);
+var nd1= addDays(new Date(), 365);
+var maxdate1=nd1.getFullYear()+'/'+ (nd1.getMonth()+1) +'/'+nd1.getDate();
+var mindate2=mindate1;
+var mindate1=nd.getFullYear()+'/'+ (nd.getMonth()+1) +'/'+nd.getDate();
+$('#datetimepicker1').datetimepicker({
+ timepicker:true,
+ 
+minDate: mindate1,
+ maxDate: maxdate1
+});
+
+
+	$('#datetimepicker2').datetimepicker({
+ timepicker:true,
+
+minDate: mindate2,
+maxDate: maxdate1
+});
+
+</script>		</body>
+</html>
